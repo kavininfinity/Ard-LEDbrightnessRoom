@@ -41,14 +41,12 @@ void loop()
   if((n<6)&&(n>-1))
     {analogWrite(led,50*n);    
      Serial.print("Number of Person=");
-     Serial.println(n);}
+     Serial.println(n);
+     digitalWrite(fled,LOW);}
   else if(n>4)
   { Serial.println("Room Filled");
     digitalWrite(fled,HIGH);
   }
-  else
-    digitalWrite(fled,LOW);
   
   }
   //delay(500);
-}
