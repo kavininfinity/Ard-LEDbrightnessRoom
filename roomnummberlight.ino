@@ -1,8 +1,9 @@
-const int a=2,b=3,led=5;
+const int a=2,b=3,led=5,fled=6;
 void setup() {
 pinMode(a,INPUT);
 pinMode(b,INPUT);
 pinMode(led,OUTPUT);
+pinMode(fled,OUTPUT);digitalWrite(fled,LOW);
 Serial.begin(9600);}
 int n=0;
 void loop() 
@@ -41,5 +42,13 @@ void loop()
     {analogWrite(led,50*n);    
      Serial.print("Number of Person=");
      Serial.println(n);}
+  else if(n>4)
+  { Serial.println("Room Filled");
+    digitalWrite(fled,HIGH);
+  }
+  else
+    digitalWrite(fled,LOW);
+  
+  }
   //delay(500);
 }
